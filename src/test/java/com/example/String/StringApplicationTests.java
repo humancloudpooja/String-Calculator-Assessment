@@ -52,6 +52,11 @@ class StringApplicationTests {
 	}
 
 
+	@Test
+	public void testAddStringWithCustomDelimiter() {
+		assertEquals(3, Calculator.add("//;\n1;2")); // Using ';' as custom delimiter
+	}
+
 
 
 }

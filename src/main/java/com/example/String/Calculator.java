@@ -21,14 +21,23 @@ public class Calculator {
     public static String[] splitNumbers(String text)
     {
 
-        if(text.contains("\n"))
+        /*if(text.contains("\n"))
         {
             return text.split("\n");
         }
         else {
             return text.split(",");
         }
-          // return text.split(",");
+          // return text.split(",");*/
+
+        String delimiter = ",|\n"; // Default delimiters are comma and newline
+        if (text.startsWith("//")) {
+            // Custom delimiter format detected
+            int delimiterIndex = text.indexOf("\n");
+            delimiter = text.substring(2, delimiterIndex); // Extract custom delimiter
+            text = text.substring(delimiterIndex + 1); // Remove the delimiter line
+        }
+        return text.split(delimiter);
 
 
 
