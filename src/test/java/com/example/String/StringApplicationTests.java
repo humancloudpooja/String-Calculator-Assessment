@@ -42,8 +42,16 @@ class StringApplicationTests {
 	@Test
 	public void testStringWithNewLines()
 	{
-		assertEquals(14,Calculator.add("\n,1,4,9"));
+		assertEquals(20,Calculator.add("12\n3\n5"));
 	}
+
+	@Test
+	public void testAddingDigitWithComma()
+	{
+		assertEquals(20,Calculator.add("10,10"));
+	}
+
+
 
 
 }
